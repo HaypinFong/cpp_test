@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+project(test-std-forward)
+set(CMAKE_CXX_STANDARD 20)
+set(CXX_STANDARD_REQUIRED 20)
+add_executable(main test-std-forward.cpp)
