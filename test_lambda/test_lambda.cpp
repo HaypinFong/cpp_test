@@ -8,8 +8,8 @@ class Data
         string name;
     public:
         Data(string val):name(val){}
-        Data(Data &obj):name(obj.name){         // 拷贝构造
-            cout<<"calling copy constructor"<<endl;
+        Data(const Data &obj):name(obj.name){   // 拷贝构造
+            cout<<"calling copy constructor Data(const Data&)"<<endl;
         }
         string & operator=(const Data &obj){    // 赋值运算符重载
             name=obj.name;
@@ -32,6 +32,9 @@ class Son
         Data data;
     public:
         Son(string val):data(val){}
+        Son(const Son& obj):data(obj.data){
+            cout<<"calling copy constructor Son(const Son&)"<<endl;
+        }
         void func1(){
             /*function<void()>*//*auto close_func=*/[this]()->void{   // capture this by reference
                 // data="func1";
